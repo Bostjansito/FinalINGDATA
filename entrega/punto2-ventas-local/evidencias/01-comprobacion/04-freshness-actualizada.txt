@@ -1,0 +1,13 @@
+INICIO dbt ['source', 'freshness']
+11:08:41  Running with dbt=1.9.4
+11:08:42  Registered adapter: duckdb=1.9.2
+11:08:42  Found 2 models, 17 data tests, 1 source, 426 macros
+11:08:42  
+11:08:42  Concurrency: 1 threads (target='local')
+11:08:42  
+11:08:42  1 of 1 START freshness of ventas_raw.ventas .................................... [RUN]
+11:08:42  1 of 1 PASS freshness of ventas_raw.ventas ..................................... [PASS in 0.02s]
+11:08:42  
+11:08:42  Finished running 1 source in 0 hours 0 minutes and 0.13 seconds (0.13s).
+11:08:42  Done.
+FIN dbt ['source', 'freshness']

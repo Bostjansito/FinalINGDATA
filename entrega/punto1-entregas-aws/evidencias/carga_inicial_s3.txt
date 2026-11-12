@@ -1,0 +1,13 @@
+# Etapa inicial: carga individual de los dias 1 y 2 (archivos originales, UTF-8 sin BOM, LF)
+$ aws s3 cp data/entregas/fecha=2026-10-01/entregas.csv s3://final-entregas-387512138242/entregas/fecha=2026-10-01/entregas.csv   (2026-11-12T11:54:59Z)
+upload: data/entregas/fecha=2026-10-01/entregas.csv to s3://final-entregas-387512138242/entregas/fecha=2026-10-01/entregas.csv
+$ aws s3 cp data/entregas/fecha=2026-10-02/entregas.csv s3://final-entregas-387512138242/entregas/fecha=2026-10-02/entregas.csv   (2026-11-12T11:55:02Z)
+upload: data/entregas/fecha=2026-10-02/entregas.csv to s3://final-entregas-387512138242/entregas/fecha=2026-10-02/entregas.csv
+
+$ aws s3 ls s3://final-entregas-387512138242/entregas/ --recursive
+2026-11-12 06:55:02        313 entregas/fecha=2026-10-01/entregas.csv
+2026-11-12 06:55:04        313 entregas/fecha=2026-10-02/entregas.csv
+
+# Verificacion: el objeto en S3 es identico al archivo local (sha256)
+IDENTICO fecha=2026-10-01 sha256=1eef2fc61b6bc90d495a380e3d8bf1567ecdd864b48b28e2f707c3cf62c74831
+IDENTICO fecha=2026-10-02 sha256=65deb2361fa7d5df36da1cffc6645c586d54408238cbfddb5f17a0681109100d

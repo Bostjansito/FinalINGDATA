@@ -1,0 +1,19 @@
+# Etapa final: solo se sube el archivo del dia 3. Sin crawlers, sin MSCK REPAIR, sin ALTER TABLE ADD PARTITION,
+# sin cambios en Terraform ni en las propiedades de la tabla.
+$ terraform plan -detailed-exitcode   (antes de la carga: la infraestructura no cambia)
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+$ aws s3 cp data/entregas/fecha=2026-10-03/entregas.csv s3://final-entregas-387512138242/entregas/fecha=2026-10-03/entregas.csv   (2026-11-12T11:57:50Z)
+upload: data/entregas/fecha=2026-10-03/entregas.csv to s3://final-entregas-387512138242/entregas/fecha=2026-10-03/entregas.csv
+
+$ aws s3 ls s3://final-entregas-387512138242/entregas/ --recursive
+2026-11-12 06:55:02        313 entregas/fecha=2026-10-01/entregas.csv
+2026-11-12 06:55:04        313 entregas/fecha=2026-10-02/entregas.csv
+2026-11-12 06:57:54        323 entregas/fecha=2026-10-03/entregas.csv
+
+IDENTICO fecha=2026-10-03 sha256=95937ab75f11d0df55efa859f82f12f7ad63fbf4434f70597e3e19e14edc230d
+
+$ aws glue get-partitions --database-name final_entregas --table-name entregas   (sigue sin particiones registradas)
+0

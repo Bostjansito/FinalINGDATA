@@ -1,0 +1,17 @@
+$ aws sts get-caller-identity  (2026-11-12T11:21:28Z)
+{
+    "UserId": "AIDAVUOMF7IBNVNTFUVTH",
+    "Account": "387512138242",
+    "Arn": "arn:aws:iam::387512138242:user/sebastian-admin"
+}
+
+$ aws configure get region
+us-east-1
+
+$ terraform version
+Terraform v1.17.0
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.17.2. You can update by downloading from https://developer.hashicorp.com/terraform/install
+

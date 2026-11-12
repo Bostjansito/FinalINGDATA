@@ -1,0 +1,15 @@
+# Estados de la ejecución desactualizada (airflow tasks states-for-dag-run)
+dag_id        | execution_date            | task_id            | state           | start_date                       | end_date                        
+==============+===========================+====================+=================+==================================+=================================
+examen_ventas | 2026-11-12T11:31:29+00:00 | comprobar_frescura | failed          | 2026-11-12T11:31:33.082429+00:00 | 2026-11-12T11:31:36.121176+00:00
+examen_ventas | 2026-11-12T11:31:29+00:00 | construir_resumen  | upstream_failed | 2026-11-12T11:31:36.257731+00:00 | 2026-11-12T11:31:36.257731+00:00
+                                                                                                                                                      
+
+# Carpetas de logs para run_id=manual__2026-11-12T11:31:25+00:00
+# (construir_resumen no aparece: no hubo intento ni marca INICIO dbt)
+task_id=comprobar_frescura
+
+# Artefactos dbt justo después del bloqueo (bash scripts/examen.sh artifacts, resumido)
+sources.json      generated_at=2026-11-12T11:31:35.635643Z  status=error  max_loaded_at=2026-11-11T05:31:25.242909+00:00  max_loaded_at_time_ago_in_s=108010  criteria={'count': 12, 'period': 'hour'} / {'count': 24, 'period': 'hour'}
+run_results.json  generated_at=2026-11-12T11:31:12.838945Z  comando='dbt build --project-dir /workspace/dbt --profiles-dir /workspace/dbt'
+# El último build es el de la ejecución actualizada (11:31:12 UTC); en la desactualizada no hubo build.

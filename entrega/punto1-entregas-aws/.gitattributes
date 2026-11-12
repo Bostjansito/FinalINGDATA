@@ -1,0 +1,5 @@
+# Conservar los finales de línea LF de los CSV y scripts (los datos no se deben modificar)
+*.csv text eol=lf
+*.sql text eol=lf
+*.sh  text eol=lf
+*.tf  text eol=lf

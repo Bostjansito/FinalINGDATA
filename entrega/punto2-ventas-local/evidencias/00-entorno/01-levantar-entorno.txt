@@ -1,0 +1,119 @@
+### 2026-11-12T02:20:04Z bash scripts/preparar.sh
+Creado .env local con AIRFLOW_UID=1000.
+### docker compose pull
+ Image smendezm/examen-ventas:1.0 Pulling 
+ d1c78cd0c717 Pulling fs layer 0B
+ bb52c308e36b Pulling fs layer 0B
+ 406a0354251c Pulling fs layer 0B
+ c29f5b76f736 Pulling fs layer 0B
+ 9ffeec8286d0 Pulling fs layer 0B
+ 73c4bbda278d Pulling fs layer 0B
+ acc53c3e87ac Pulling fs layer 0B
+ e7875897d831 Pulling fs layer 0B
+ 7e5ffb8a34db Pulling fs layer 0B
+ e5fca426a23e Pulling fs layer 0B
+ 96484fb4b3d0 Pulling fs layer 0B
+ 4f4fb700ef54 Pulling fs layer 0B
+ 35d168acb0f0 Pulling fs layer 0B
+ 530c903dd24a Pulling fs layer 0B
+ 47b9277cd16d Pulling fs layer 0B
+ 4e80eac6d15c Pulling fs layer 0B
+ ec474c07bf72 Pulling fs layer 0B
+ 6c01bc612e9f Pulling fs layer 0B
+ 011b25d36b13 Pulling fs layer 0B
+ 5a032f61fe03 Pulling fs layer 0B
+ ad3b14759e4f Pulling fs layer 0B
+ 29b5abe07a3b Pulling fs layer 0B
+ 504270c6a97e Pulling fs layer 0B
+ 7cbf01db0cc0 Pulling fs layer 0B
+ 66e69f744e4f Pulling fs layer 0B
+ 4f4fb700ef54 Already exists 0B
+ 35d168acb0f0 Download complete 0B
+ 7e5ffb8a34db Download complete 0B
+ d1c78cd0c717 Download complete 0B
+ e7875897d831 Download complete 0B
+ bb52c308e36b Download complete 0B
+ e5fca426a23e Download complete 0B
+ acc53c3e87ac Download complete 0B
+ 530c903dd24a Download complete 0B
+ 96484fb4b3d0 Download complete 0B
+ 9ffeec8286d0 Download complete 0B
+ 73c4bbda278d Download complete 0B
+ 406a0354251c Download complete 0B
+ 29b5abe07a3b Download complete 0B
+ ad3b14759e4f Download complete 0B
+ c29f5b76f736 Download complete 0B
+ 4e80eac6d15c Download complete 0B
+ ec474c07bf72 Download complete 0B
+ 5a032f61fe03 Download complete 0B
+ 7cbf01db0cc0 Download complete 0B
+ 504270c6a97e Download complete 0B
+ 6c01bc612e9f Download complete 0B
+ 011b25d36b13 Download complete 0B
+ 44136fa355b3 Already exists 0B
+ f60cabff91ef Download complete 0B
+ c29f5b76f736 Pull complete 0B
+ 47b9277cd16d Download complete 0B
+ 73c4bbda278d Pull complete 0B
+ acc53c3e87ac Pull complete 0B
+ ad3b14759e4f Pull complete 0B
+ 011b25d36b13 Pull complete 0B
+ 504270c6a97e Pull complete 0B
+ e7875897d831 Pull complete 0B
+ 9ffeec8286d0 Pull complete 0B
+ 96484fb4b3d0 Pull complete 0B
+ 66e69f744e4f Download complete 0B
+ 66e69f744e4f Pull complete 0B
+ bb52c308e36b Pull complete 0B
+ 4e80eac6d15c Pull complete 0B
+ ec474c07bf72 Pull complete 0B
+ 7cbf01db0cc0 Pull complete 0B
+ 35d168acb0f0 Pull complete 0B
+ 7e5ffb8a34db Pull complete 0B
+ 406a0354251c Pull complete 0B
+ 6c01bc612e9f Pull complete 0B
+ 4f4fb700ef54 Pull complete 0B
+ e5fca426a23e Pull complete 0B
+ 29b5abe07a3b Pull complete 0B
+ 5a032f61fe03 Pull complete 0B
+ 530c903dd24a Pull complete 0B
+ 47b9277cd16d Pull complete 0B
+ d1c78cd0c717 Pull complete 0B
+ Image smendezm/examen-ventas:1.0 Pulled 
+### docker image ls
+IMAGE                        ID             DISK USAGE   CONTENT SIZE   EXTRA
+smendezm/examen-ventas:1.0   c57ddf51f087       2.47GB          515MB        
+### docker compose up -d --wait airflow
+ Network examen-ventas_default Creating 
+ Network examen-ventas_default Creating 
+ Volume examen-ventas_warehouse Creating 
+ Volume examen-ventas_state Creating 
+ Volume examen-ventas_warehouse Creating 
+ Volume examen-ventas_state Creating 
+ Volume examen-ventas_warehouse Created 
+ Volume examen-ventas_warehouse Created 
+ Volume examen-ventas_state Created 
+ Volume examen-ventas_state Created 
+ Network examen-ventas_default Created 
+ Network examen-ventas_default Created 
+ Container examen-ventas-permissions-1 Creating 
+ Container examen-ventas-permissions-1 Created 
+ Container examen-ventas-airflow-1 Creating 
+ Container examen-ventas-airflow-1 Created 
+ Container examen-ventas-permissions-1 Starting 
+ Container examen-ventas-permissions-1 Started 
+ Container examen-ventas-permissions-1 Waiting 
+ Container examen-ventas-permissions-1 Exited 
+ Container examen-ventas-airflow-1 Starting 
+ Container examen-ventas-airflow-1 Started 
+ Container examen-ventas-airflow-1 Waiting 
+ Container examen-ventas-permissions-1 Waiting 
+ Container examen-ventas-permissions-1 Exited 
+ Container examen-ventas-airflow-1 Healthy 
+
+real	1m13.074s
+user	0m0.178s
+sys	0m0.110s
+### docker compose ps
+NAME                      IMAGE                        COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+examen-ventas-airflow-1   smendezm/examen-ventas:1.0   "/usr/bin/dumb-init …"   airflow   28 seconds ago   Up 26 seconds (healthy)   127.0.0.1:8080->8080/tcp

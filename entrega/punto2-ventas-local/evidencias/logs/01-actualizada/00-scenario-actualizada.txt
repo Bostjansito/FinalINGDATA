@@ -1,0 +1,1 @@
+{"scenario": "actualizada", "rows": 6, "max_loaded_at": "2026-11-12T09:30:54.119248+00:00"}

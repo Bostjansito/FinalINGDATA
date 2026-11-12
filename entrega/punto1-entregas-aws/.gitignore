@@ -1,0 +1,23 @@
+# Credenciales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+.aws/
+
+# Estado y archivos locales de Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+*.tfvars
+!*.tfvars.example
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json

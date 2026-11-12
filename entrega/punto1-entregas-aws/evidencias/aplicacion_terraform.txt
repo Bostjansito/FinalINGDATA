@@ -1,0 +1,28 @@
+$ terraform apply tfplan   (2026-11-12T11:46:59Z, usuario arn:aws:iam::387512138242:user/sebastian-admin)
+aws_glue_catalog_database.entregas: Creating...
+aws_athena_workgroup.entregas: Creating...
+aws_s3_bucket.entregas: Creating...
+aws_glue_catalog_database.entregas: Creation complete after 1s [id=387512138242:final_entregas]
+aws_athena_workgroup.entregas: Creation complete after 1s [id=final-entregas-wg]
+aws_glue_catalog_table.entregas: Creating...
+aws_glue_catalog_table.entregas: Creation complete after 0s [id=387512138242:final_entregas:entregas]
+aws_s3_bucket.entregas: Creation complete after 3s [id=final-entregas-387512138242]
+aws_s3_bucket_public_access_block.entregas: Creating...
+aws_s3_bucket_server_side_encryption_configuration.entregas: Creating...
+aws_s3_bucket_ownership_controls.entregas: Creating...
+aws_s3_bucket_server_side_encryption_configuration.entregas: Creation complete after 1s [id=final-entregas-387512138242]
+aws_s3_bucket_public_access_block.entregas: Creation complete after 1s [id=final-entregas-387512138242]
+aws_s3_bucket_ownership_controls.entregas: Creation complete after 1s [id=final-entregas-387512138242]
+
+Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+base_datos = "final_entregas"
+bucket = "final-entregas-387512138242"
+region = "us-east-1"
+tabla = "entregas"
+tabla_completa = "final_entregas.entregas"
+ubicacion_datos = "s3://final-entregas-387512138242/entregas/"
+ubicacion_resultados_athena = "s3://final-entregas-387512138242/resultados-athena/"
+workgroup = "final-entregas-wg"

@@ -1,0 +1,60 @@
+# =====================================================================
+# Repositorio del examen final: solo se entrega la carpeta entrega/
+# =====================================================================
+
+# --- Material que NO es parte de la entrega ---
+# Enunciado en PDF y mensajes del profesor
+/instrucciones/
+# Material del curso usado como referencia (repos, presentaciones, actividades)
+/contexto/
+# Clones sin modificar de los repos del enunciado (smm-0216/DE-Final-*)
+/enunciados/
+# Entorno del ZIP de preparación (reemplazado por entrega/punto2-ventas-local)
+/examen/
+/examen-ventas-entorno.zip
+*Zone.Identifier
+# Evidencias de la primera versión del DAG del punto 2 (reemplazadas por las finales)
+/entrega/punto2-ventas-local/evidencias/historico-dag-v1/
+
+# --- Secretos y credenciales ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*.json
+
+# --- Terraform ---
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl.bak
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# --- dbt / Airflow / DuckDB (artefactos locales, no las evidencias) ---
+dbt/target/
+dbt/logs/
+dbt_packages/
+airflow/logs/
+*.duckdb
+*.duckdb.wal
+
+# --- Herramientas locales ---
+.claude/
+CLAUDE.md
+.vscode/
+.DS_Store
+Thumbs.db
